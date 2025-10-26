@@ -56,6 +56,16 @@ public class Main {
                 case C_ARITHMETIC:
                     codeWriter.writeArithmetic(parser.arg1());
                     break;
+                // Manejo de los nuevos tipos de comando
+                case C_FUNCTION:
+                    codeWriter.writeFunction(parser.arg1(), parser.arg2());
+                    break;
+                case C_CALL:
+                    codeWriter.writeCall(parser.arg1(), parser.arg2());
+                    break;
+                case C_RETURN:
+                    codeWriter.writeReturn();
+                    break;
             }
         }
     }
