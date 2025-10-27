@@ -1,0 +1,8 @@
+// Sys.init: bootstrap alternative (tu traductor también hace bootstrap automáticamente)
+function Sys.init 0
+// ponemos un valor de ejemplo para n y llamamos a Main.computeSum
+push constant 6   // cambia 6 por el n que quieras
+call Main.computeSum 1
+// al terminar queda el resultado en la pila
+label END
+goto END

@@ -1,0 +1,71 @@
+// Main.computeSum(n): suma_{i=0..n} (i^2 + 1)
+function Main.computeSum 2
+// local 0 = i
+// local 1 = total
+push constant 0
+pop local 0
+push constant 0
+pop local 1
+
+label COMPUTE_LOOP
+push local 0
+push argument 0
+gt
+if-goto END_LOOP
+
+// total = total + (i^2 + 1)
+push local 1
+push local 0
+call Main.square 1
+call Main.addOne 1
+add
+pop local 1
+
+// i = i + 1
+push local 0
+push constant 1
+add
+pop local 0
+goto COMPUTE_LOOP
+
+label END_LOOP
+push local 1
+return
+
+// square(x) via suma repetida
+function Main.square 2
+// local 0 = counter (copy of arg0)
+// local 1 = acc
+push argument 0
+pop local 0
+push constant 0
+pop local 1
+
+label SQR_LOOP
+push local 0
+push constant 0
+gt
+if-goto SQR_DO
+goto SQR_END
+
+label SQR_DO
+push local 1
+push argument 0
+add
+pop local 1
+push local 0
+push constant 1
+sub
+pop local 0
+goto SQR_LOOP
+
+label SQR_END
+push local 1
+return
+
+// addOne(x)
+function Main.addOne 0
+push argument 0
+push constant 1
+add
+return
