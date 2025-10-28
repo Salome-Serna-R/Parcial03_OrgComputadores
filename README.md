@@ -1,17 +1,17 @@
-# 🧠 Traductor de Máquina Virtual
+# Traductor de Máquina Virtual
 
 **Proyecto:** Traductor de máquina virtual extendido para soportar funciones, llamadas y retornos  
 
 ---
 
-## 👥 Integrantes del grupo
+## Integrantes del grupo
 - **Salomé Serna Restrepo**
 - **Juan David Velásquez Restrepo**
 - **Luciana Hoyos Pérez**
 
 ---
 
-## 🧩 Descripción breve del proyecto
+## Descripción breve del proyecto
 Este proyecto implementa un **traductor de Máquina Virtual (VM Translator)** capaz de convertir código en lenguaje de máquina virtual (VM) del curso *Nand2Tetris* a código ensamblador del **Hack Computer**.  
 
 La versión extendida del traductor incluye soporte completo para:
@@ -21,7 +21,7 @@ La versión extendida del traductor incluye soporte completo para:
 
 ---
 
-## 🧱 Estructura del código
+## Estructura del código
 
 | Módulo | Descripción |
 |:-------|:-------------|
@@ -32,30 +32,30 @@ La versión extendida del traductor incluye soporte completo para:
 
 ---
 
-## 🧮 Explicación del programa **NestedSum**
+## Explicación del programa **NestedSum**
 
 El archivo **Main.vm** implementa un conjunto de funciones que realizan cálculos anidados, demostrando el uso de llamadas y retornos de funciones en la máquina virtual.
 
-### 🔸 `Sys.init` - Archivo Distinto
+###  `Sys.init` - Archivo Distinto
 - Punto de entrada del programa.  
 - Inicializa el puntero del stack (`SP=256`) y realiza la primera llamada a `Main.computeSum`.
 
-### 🔸 `Main.computeSum`
+###  `Main.computeSum`
 - Función principal que calcula la **suma acumulada** de los números del 1 al valor recibido como argumento.  
 - Utiliza un bucle (`COMPUTE_LOOP`) para repetir operaciones de suma y llamadas a `Main.square` y `Main.addOne`.  
 
-### 🔸 `Main.square`
+###  `Main.square`
 - Calcula el **cuadrado de un número** mediante sumas repetidas.  
 - Emplea un bucle (`SQR_LOOP`) para sumar el valor del argumento tantas veces como sea necesario.  
 - Llama a `Main.addOne` al final para incrementar resultados parciales.  
 
-### 🔸 `Main.addOne`
+###  `Main.addOne`
 - Retorna el valor del argumento más 1.  
 - Es utilizada por las demás funciones para incrementar contadores o resultados intermedios.  
 
 ---
 
-## 🧾 Resultado generado
+##  Resultado generado
 El traductor produce el archivo ensamblador:
 
 ```bash
@@ -66,21 +66,21 @@ que contiene todas las instrucciones en **lenguaje ensamblador Hack**, listas pa
 
 ---
 
-## ⚙️ Cómo ejecutar
+##  Cómo ejecutar
 
-### 1️⃣ Compilar el traductor:
+### 1️ Compilar el traductor:
 
 ```bash
 javac -d out src/com/stockxit/nand2tetris/*.java
 ```
 
-### 2️⃣ Ejecutar el traductor sobre el archivo VM:
+### 2️ Ejecutar el traductor sobre el archivo VM:
 
 ```bash
 java -cp out com.stockxit.nand2tetris.Main vmfiles
 ```
 
-### 3️⃣ Salida esperada:
+### 3️ Salida esperada:
 
 ```bash
 vmfiles.asm
